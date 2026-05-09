@@ -57,6 +57,16 @@ export default defineType({
               validation: (Rule) =>
                 Rule.uri({scheme: ['http', 'https']}),
             }),
+            defineField({
+              name: 'description',
+              title: 'Description',
+              type: 'string',
+            }),
+            defineField({
+              name: 'username',
+              title: 'Username',
+              type: 'string',
+            }),
           ],
         },
       ],

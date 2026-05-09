@@ -32,14 +32,6 @@ export default defineType({
         Rule.uri({scheme: ['http', 'https']}),
     }),
     defineField({
-      name: 'coverImage',
-      title: 'Cover Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
