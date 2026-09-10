@@ -1,18 +1,19 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'demo',
-  title: 'Demo',
+  name: 'work',
+  title: 'Trabajo',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Title',
+      title: 'Título',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'category',
-      title: 'Category',
+      title: 'Categoría',
       type: 'string',
       options: {
         list: [
@@ -25,11 +26,16 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'videoUrl',
-      title: 'Video URL',
+      name: 'country',
+      title: 'País',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'youtubeUrl',
+      title: 'URL de YouTube',
       type: 'url',
-      validation: (Rule) =>
-        Rule.uri({scheme: ['http', 'https']}),
+      validation: (Rule) => Rule.required().uri({scheme: ['http', 'https']}),
     }),
     defineField({
       name: 'slug',
@@ -41,4 +47,10 @@ export default defineType({
       },
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'country',
+    },
+  },
 })

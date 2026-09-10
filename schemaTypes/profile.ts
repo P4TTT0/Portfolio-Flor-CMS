@@ -16,6 +16,19 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'bio',
+      title: 'Bio',
+      type: 'text',
+    }),
+    defineField({
+      name: 'picture',
+      title: 'Picture',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'email',
       title: 'Email',
       type: 'string',
